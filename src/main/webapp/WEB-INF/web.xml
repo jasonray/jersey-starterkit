@@ -8,8 +8,9 @@
 		
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>jayray</param-value>
+			<param-value>jayray;com.yammer.metrics.jersey</param-value>
 		</init-param>
+		
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>

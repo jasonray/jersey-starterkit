@@ -5,6 +5,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
 import com.yammer.metrics.Metrics;
+import com.yammer.metrics.annotation.Metered;
+import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Counter;
 
 @Path("hello")
@@ -20,12 +22,16 @@ public class HelloWorldResource {
 	}
 
 	@GET
+	@Timed(name="sayHello-timer")
+	@Metered(name="sayHello-meter")
 	public String sayhello() {
 		numberOfHellos.inc();
 		return "hello";
 	}
 
 	@GET
+	@Timed(name="echo-timer")
+	@Metered(name="echo-meter")
 	@Path("echo")
 	public String echo(@QueryParam("message") String message) {
 		numberOfEchos.inc();
