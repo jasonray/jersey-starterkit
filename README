@@ -1,3 +1,5 @@
+This project demonstrates using documentation generator [https://github.com/wordnik/swagger-core/wiki/java-jax-rs]
+
 To run sample,
 
 1) Ensure that you have gradle installed [http://gradle.org/installation.html]
