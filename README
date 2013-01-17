@@ -1,3 +1,5 @@
+This is a sample project using jax-rs / jersey
+
 To run sample,
 
 1) Ensure that you have gradle installed [http://gradle.org/installation.html]
