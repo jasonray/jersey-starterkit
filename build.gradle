@@ -1,1 +1,14 @@
 apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.sun.jersey:jersey-core:1.12'
+    compile 'com.sun.jersey:jersey-server:1.12'
+    compile 'com.sun.jersey:jersey-grizzly2:1.12'
+    testCompile 'com.sun.jersey:jersey-test-framework:1.12'
+}
