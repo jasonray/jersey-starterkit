@@ -1,19 +1,39 @@
 package jayray.net;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
+import com.yammer.metrics.Metrics;
+import com.yammer.metrics.core.Counter;
+import com.yammer.metrics.reporting.ConsoleReporter;
+
 @Path("hello")
 public class HelloWorldResource {
+	private final Counter numberOfHellos = Metrics.newCounter(HelloWorldResource.class, "number-of-hello");
+	private final Counter numberOfEchos = Metrics.newCounter(HelloWorldResource.class, "number-of-echos");
+	private final Counter numberOfEchoCharacters = Metrics.newCounter(HelloWorldResource.class, "number-of-echo-characters");
+
+	{
+		ConsoleReporter.enable(1, TimeUnit.SECONDS);
+	}
+
 	@GET
 	public String sayhello() {
+		numberOfHellos.inc();
 		return "hello";
 	}
 
 	@GET
 	@Path("echo")
 	public String echo(@QueryParam("message") String message) {
+		numberOfEchos.inc();
+
+		if (message != null)
+			numberOfEchoCharacters.inc(message.length());
+
 		return "echo: " + message;
 	}
 }

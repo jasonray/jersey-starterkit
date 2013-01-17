@@ -14,6 +14,8 @@ dependencies {
 	compile 'com.sun.jersey:jersey-client:1.13'
 	compile 'com.sun.jersey:jersey-servlet:1.13'
 	compile 'com.sun.jersey:jersey-json:1.13'
+	
+	compile 'com.yammer.metrics:metrics-core:2.2.0'
 
 	testCompile "junit:junit-dep:4.10"
 }
