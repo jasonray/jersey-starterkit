@@ -5,6 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
 import com.yammer.metrics.Metrics;
+import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Counter;
 
 @Path("hello")
@@ -14,8 +15,9 @@ public class HelloWorldResource {
 	private final Counter numberOfEchoCharacters = Metrics.newCounter(HelloWorldResource.class, "number-of-echo-characters");
 
 	{
-		//by uncommenting the line below, the metrics are outputed to STDOUT every second
-		//ConsoleReporter.enable(1, TimeUnit.SECONDS);
+		// by uncommenting the line below, the metrics are outputed to STDOUT
+		// every second
+		// ConsoleReporter.enable(1, TimeUnit.SECONDS);
 	}
 
 	@GET
