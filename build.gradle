@@ -17,3 +17,7 @@ dependencies {
 
 	testCompile "junit:junit-dep:4.10"
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.3'
+}
