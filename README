@@ -2,9 +2,8 @@ This is a sample project using jax-rs / jersey
 
 To run sample,
 
-1) Ensure that you have gradle installed [http://gradle.org/installation.html]
-2) Build war file
-gradle war
-3) Deploy war file to web container
-4) Open browser to:
+1) Build war file
+./gradlew war
+2) Deploy war file to web container
+3) Open browser to:
 /jersey-helloworld/rest/hello
