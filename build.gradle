@@ -20,3 +20,7 @@ dependencies {
 	compile 'com.wordnik:swagger-core_2.9.1:1.2.0'
 	compile 'com.wordnik:swagger-jaxrs_2.9.1:1.2.0'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.3'
+}
