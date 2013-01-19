@@ -2,18 +2,14 @@ package jayray.net;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.Produces;
 
 @Path("hello")
 public class HelloWorldResource {
 	@GET
+	@Produces("text/plain")
 	public String sayhello() {
 		return "hello";
 	}
 
-	@GET
-	@Path("echo")
-	public String echo(@QueryParam("message") String message) {
-		return "echo: " + message;
-	}
 }
