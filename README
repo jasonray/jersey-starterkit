@@ -1,9 +1,0 @@
-This project demonstrates using documentation generator [https://github.com/wordnik/swagger-core/wiki/java-jax-rs]
-
-To run sample,
-
-1) Build war file
-./gradlew war
-2) Deploy war file to web container
-3) Open browser to:
-/jersey-helloworld/rest/hello
