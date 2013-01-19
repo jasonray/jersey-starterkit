@@ -6,7 +6,7 @@ How-to run
 ==========
 1) Compile
 The project compiles using gradle.  If you already have gradle installed, compile using:
-`  gradle war`
+`gradle war`
 
 
 If you do not have gradle install, you can utilize the gradle wrapper included in the source
