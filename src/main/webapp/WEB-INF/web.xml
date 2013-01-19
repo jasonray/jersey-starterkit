@@ -8,6 +8,13 @@
 			<param-name>com.sun.jersey.config.property.packages</param-name>
 			<param-value>jayray</param-value>
 		</init-param>
+		
+		<!-- the following is only needed if you want to use the built-in support
+		for mapping pojo objects to json. -->
+		<init-param>
+			<param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+			<param-value>true</param-value>
+	</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>

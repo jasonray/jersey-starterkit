@@ -30,6 +30,6 @@ note: I've added `deploy.sh` to assist with deploy.  First grant it execute `chm
 
 3) Confirm that it is running by fetching the URL at on webcontainer + /jersey-helloworld/rest/hello.  On my machine:
 ```
-curl localhost:8080/jersey-helloworld/rest/hello
+curl http://localhost:8080/jersey-starterkit/rest/hello
 ```
 
