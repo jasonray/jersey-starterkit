@@ -8,10 +8,6 @@ import javax.ws.rs.core.MediaType;
 
 @Path("customer")
 public class CustomerResource {
-	@GET
-	public String hello() {
-		return "hello";
-	}
 
 	@GET
 	@Path("id/{id}")
@@ -19,9 +15,11 @@ public class CustomerResource {
 	public Customer getCustomer(@PathParam("id") String id) {
 		Customer customer = new Customer();
 		customer.setId(id);
-		customer.setCity("austin");
-		customer.setState("TX");
 		customer.setName("Mighty Pulpo");
+		Address address = new Address();
+		address.setCity("austin");
+		address.setState("TX");
+		customer.setAddress(address);
 		return customer;
 	}
 }

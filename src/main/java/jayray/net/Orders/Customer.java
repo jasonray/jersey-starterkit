@@ -2,12 +2,11 @@ package jayray.net.Orders;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="customer")
+@XmlRootElement()
 public class Customer {
 	private String id;
 	private String name;
-	private String city;
-	private String state;
+	private Address address;
 
 	public String getId() {
 		return id;
@@ -25,19 +24,12 @@ public class Customer {
 		this.name = name;
 	}
 
-	public String getCity() {
-		return city;
+	public Address getAddress() {
+		return address;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
 }
