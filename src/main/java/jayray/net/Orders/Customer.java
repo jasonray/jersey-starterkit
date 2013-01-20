@@ -1,12 +1,16 @@
 package jayray.net.Orders;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement()
 public class Customer {
 	private String id;
 	private String name;
-	private Address address;
+	private List<Address> addresses = new ArrayList<Address>();
 
 	public String getId() {
 		return id;
@@ -24,12 +28,12 @@ public class Customer {
 		this.name = name;
 	}
 
-	public Address getAddress() {
-		return address;
+	@XmlElement(name="address")
+	public List<Address> getAddresses() {
+		return addresses;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setAddresses(List<Address> address) {
+		this.addresses = address;
 	}
-
 }

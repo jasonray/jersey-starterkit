@@ -19,7 +19,13 @@ public class CustomerResource {
 		Address address = new Address();
 		address.setCity("austin");
 		address.setState("TX");
-		customer.setAddress(address);
+		address.setAddressType("home");
+		customer.getAddresses().add(address);
+		address = new Address();
+		address.setCity("sterling");
+		address.setState("VA");
+		address.setAddressType("work");
+		customer.getAddresses().add(address);
 		return customer;
 	}
 }
