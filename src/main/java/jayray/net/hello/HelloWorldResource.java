@@ -1,5 +1,7 @@
 package jayray.net.hello;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -10,6 +12,7 @@ import com.yammer.metrics.annotation.Metered;
 import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Counter;
 import com.yammer.metrics.core.Gauge;
+import com.yammer.metrics.reporting.GraphiteReporter;
 
 @Path("hello")
 public class HelloWorldResource {
@@ -19,6 +22,7 @@ public class HelloWorldResource {
 		// by uncommenting the line below, the metrics are outputed to STDOUT
 		// every second
 		// ConsoleReporter.enable(1, TimeUnit.SECONDS);
+		GraphiteReporter.enable(1, TimeUnit.MINUTES, "carbon.hostedgraphite.com", 2003, "6ab81206-e22d-4cb9-91df-9bfa276ea43e");
 
 		Metrics.newGauge(HelloWorldResource.class, "sample-gauge", new Gauge<Integer>() {
 			@Override
@@ -27,7 +31,7 @@ public class HelloWorldResource {
 			}
 		});
 	}
-	
+
 	@GET
 	@Timed(name = "sayHello-timer")
 	@Metered(name = "sayHello-meter")

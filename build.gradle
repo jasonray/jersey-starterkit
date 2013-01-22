@@ -18,6 +18,7 @@ dependencies {
 	compile 'com.yammer.metrics:metrics-core:2.2.0'
 	compile 'com.yammer.metrics:metrics-servlet:2.2.0'
 	compile 'com.yammer.metrics:metrics-jersey:2.2.0'
+	compile 'com.yammer.metrics:metrics-graphite:2.2.0'
 
 	testCompile "junit:junit-dep:4.10"
 }
