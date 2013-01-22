@@ -24,8 +24,10 @@ The war file is compile to: `build/libs/jersey-starterkit.war`
 cp build/libs/jersey-starterkit.war /Applications/apache-tomcat-6.0.33/webapps/
 ```
 
+note: I've added `deploy.sh` to assist with deploy.  First grant it execute `chmod deploy.sh a+x` then run './deploy.sh'.  This assumes that you are deploying by copying the war to the same place that I am
+
 3) Confirm that it is running by fetching the URL at on webcontainer + /jersey-helloworld/rest/hello.  On my machine:
 ```
-curl localhost:8080/jersey-helloworld/rest/hello
+curl http://localhost:8080/jersey-starterkit/rest/hello
 ```
 
