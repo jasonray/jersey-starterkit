@@ -2,6 +2,10 @@ Overview
 ========
 This is a starter project using jax-rs / jersey.  I've created this because I often find myself wanting to expirement with something that needs a webservice, and this gives me a starting spot.  Clone or fork and use as needed.
 
+Metrics
+=======
+This branch utilizes `metrics` [http://metrics.codahale.com] to report information from the running instance such as timings and data volume.  I am currently trying to integrate with [http://hostedgraphite.com] to collect and display the metrics.
+
 How-to run
 ==========
 1) Compile
