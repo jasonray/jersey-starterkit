@@ -35,14 +35,6 @@ public class HelloWorldResource {
 				return 5;
 			}
 		});
-
-		// I pre-pending the api key to see if that helps get the data to hosted graphite 
-		Metrics.newGauge(HelloWorldResource.class, "6ab81206-e22d-4cb9-91df-9bfa276ea43e.sample-gauge-2", new Gauge<Integer>() {
-			@Override
-			public Integer value() {
-				return 2;
-			}
-		});
 }
 
 	@GET
