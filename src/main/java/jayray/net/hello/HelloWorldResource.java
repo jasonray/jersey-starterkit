@@ -22,6 +22,11 @@ public class HelloWorldResource {
 		// by uncommenting the line below, the metrics are outputed to STDOUT
 		// every second
 		// ConsoleReporter.enable(1, TimeUnit.SECONDS);
+
+		// my hosted graphite api key = 6ab81206-e22d-4cb9-91df-9bfa276ea43e
+		// remove this key from source once I get this working
+		// by putting this key in the "enable" method, I don't think i need to 
+		// include it on each individual metric
 		GraphiteReporter.enable(1, TimeUnit.MINUTES, "carbon.hostedgraphite.com", 2003, "6ab81206-e22d-4cb9-91df-9bfa276ea43e");
 
 		Metrics.newGauge(HelloWorldResource.class, "sample-gauge", new Gauge<Integer>() {
@@ -30,7 +35,15 @@ public class HelloWorldResource {
 				return 5;
 			}
 		});
-	}
+
+		// I pre-pending the api key to see if that helps get the data to hosted graphite 
+		Metrics.newGauge(HelloWorldResource.class, "6ab81206-e22d-4cb9-91df-9bfa276ea43e.sample-gauge-2", new Gauge<Integer>() {
+			@Override
+			public Integer value() {
+				return 2;
+			}
+		});
+}
 
 	@GET
 	@Timed(name = "sayHello-timer")
