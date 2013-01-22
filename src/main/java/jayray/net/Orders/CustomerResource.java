@@ -24,7 +24,7 @@ public class CustomerResource {
 		return customerDAL(id);
 	}
 
-	final Timer dalTimer = Metrics.newTimer(this.getClass(), "get-requests", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
+	final Timer dalTimer = Metrics.newTimer(CustomerResource.class, "dal-timer", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
 
 	// handle request
 	public Customer customerDAL(String id) {
@@ -51,6 +51,8 @@ public class CustomerResource {
 			}
 
 			return customer;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
 		} finally {
 			context.stop();
 		}

@@ -7,11 +7,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import jayray.net.Orders.CustomerResource;
+
 import com.yammer.metrics.Metrics;
 import com.yammer.metrics.annotation.Metered;
 import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Counter;
 import com.yammer.metrics.core.Gauge;
+import com.yammer.metrics.core.Timer;
 import com.yammer.metrics.reporting.ConsoleReporter;
 import com.yammer.metrics.reporting.GraphiteReporter;
 
@@ -42,6 +45,10 @@ public class HelloWorldResource {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sayhello() {
 		numberOfHellos.inc();
+
+		final Timer manualTimer = Metrics.newTimer(HelloWorldResource.class, "sayhello-manual-timer", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
+		manualTimer.time().stop();
+
 		return "hello";
 	}
 
