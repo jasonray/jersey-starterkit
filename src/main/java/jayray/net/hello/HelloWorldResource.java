@@ -7,8 +7,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import jayray.net.Orders.CustomerResource;
-
 import com.yammer.metrics.Metrics;
 import com.yammer.metrics.annotation.Metered;
 import com.yammer.metrics.annotation.Timed;
