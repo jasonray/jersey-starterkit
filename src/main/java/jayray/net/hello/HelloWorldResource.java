@@ -50,7 +50,16 @@ public class HelloWorldResource {
 		// some action
 		context.stop();
 
+		innermethod();
+
 		return "hello";
+	}
+
+	private void innermethod() {
+		final Timer manualTimer = Metrics.newTimer(HelloWorldResource.class, "sayhello-manual-timer-2", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
+		TimerContext context = manualTimer.time();
+		// some action
+		context.stop();
 	}
 
 }
