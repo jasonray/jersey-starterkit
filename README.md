@@ -26,7 +26,7 @@ cp build/libs/jersey-starterkit.war /Applications/apache-tomcat-6.0.33/webapps/
 
 3) Confirm that it is running by fetching the URL at on webcontainer + /jersey-helloworld/rest/hello.  On my machine:
 ```
-curl localhost:8080/jersey-helloworld/rest/hello
+curl localhost:8080/jersey-starterkit/rest/hello
 ```
 
 Opening in Eclipse
