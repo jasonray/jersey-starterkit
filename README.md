@@ -44,3 +44,22 @@ If you do not have gradle installed, run the gradle wrapper:
 ```
 
 Now you can import the project into eclipse.
+
+Logging
+=======
+There is a log4j configuration defined in `src/main/resources/log4j.properties`.  By default this will log to the STDOUT and to a series of log files.  Change the logging configuration as needed.
+
+If you would like to use the default logging, create the logging folders:
+```
+\>sudo mkdir /restapi
+\>chmod a+wr /restapi
+````
+
+
+
+
+
+
+
+
+
