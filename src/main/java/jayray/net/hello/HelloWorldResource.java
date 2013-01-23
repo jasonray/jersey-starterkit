@@ -13,6 +13,7 @@ import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Counter;
 import com.yammer.metrics.core.Gauge;
 import com.yammer.metrics.core.Timer;
+import com.yammer.metrics.core.TimerContext;
 import com.yammer.metrics.reporting.ConsoleReporter;
 import com.yammer.metrics.reporting.GraphiteReporter;
 
@@ -45,7 +46,9 @@ public class HelloWorldResource {
 		numberOfHellos.inc();
 
 		final Timer manualTimer = Metrics.newTimer(HelloWorldResource.class, "sayhello-manual-timer", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
-		manualTimer.time().stop();
+		TimerContext context = manualTimer.time();
+		// some action
+		context.stop();
 
 		return "hello";
 	}
