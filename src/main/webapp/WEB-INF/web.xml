@@ -51,7 +51,7 @@
 	</servlet>
 
 	<servlet-mapping>
-			<servlet-name>metrics</servlet-name>
+		<servlet-name>metrics</servlet-name>
  		<url-pattern>/metrics/*</url-pattern>
 	</servlet-mapping>
 </web-app>
