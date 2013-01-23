@@ -22,6 +22,7 @@ public class JAXBContextResolver implements ContextResolver<JAXBContext> {
 		this.context = new JSONJAXBContext(JSONConfiguration.natural().build(), types);
 	}
 
+	@Override
 	public JAXBContext getContext(Class<?> objectType) {
 		for (Class type : types) {
 			if (type == objectType) {
