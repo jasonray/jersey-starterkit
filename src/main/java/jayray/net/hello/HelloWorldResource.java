@@ -12,14 +12,12 @@ import com.yammer.metrics.annotation.Metered;
 import com.yammer.metrics.annotation.Timed;
 import com.yammer.metrics.core.Counter;
 import com.yammer.metrics.core.Gauge;
-import com.yammer.metrics.core.Timer;
-import com.yammer.metrics.core.TimerContext;
 import com.yammer.metrics.reporting.ConsoleReporter;
 import com.yammer.metrics.reporting.GraphiteReporter;
 
 @Path("hello")
 public class HelloWorldResource {
-	private final Counter numberOfHellos = Metrics.newCounter(HelloWorldResource.class, "number-of-hello");
+	private final Counter numberOfHellos = Metrics.newCounter(HelloWorldResource.class, "hello.count");
 
 	{
 		// by uncommenting the line below, the metrics are outputed to STDOUT
@@ -30,7 +28,7 @@ public class HelloWorldResource {
 		// remove this key from source once I get this working.
 		GraphiteReporter.enable(1, TimeUnit.MINUTES, "carbon.hostedgraphite.com", 2003, "6ab81206-e22d-4cb9-91df-9bfa276ea43e");
 
-		Metrics.newGauge(HelloWorldResource.class, "sample-gauge", new Gauge<Integer>() {
+		Metrics.newGauge(HelloWorldResource.class, "hello.gauge", new Gauge<Integer>() {
 			@Override
 			public Integer value() {
 				return 5;
@@ -39,27 +37,12 @@ public class HelloWorldResource {
 	}
 
 	@GET
-	@Timed(name = "sayHello-timer")
-	@Metered(name = "sayHello-meter")
+	@Timed(name = "hello.rest.timer")
+	@Metered(name = "hello.rest.meter")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String sayhello() {
 		numberOfHellos.inc();
-
-		final Timer manualTimer = Metrics.newTimer(HelloWorldResource.class, "sayhello-manual-timer", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
-		TimerContext context = manualTimer.time();
-		// some action
-		context.stop();
-
-		innermethod();
-
 		return "hello";
-	}
-
-	private void innermethod() {
-		final Timer manualTimer = Metrics.newTimer(HelloWorldResource.class, "sayhello-manual-timer-2", TimeUnit.MILLISECONDS, TimeUnit.SECONDS);
-		TimerContext context = manualTimer.time();
-		// some action
-		context.stop();
 	}
 
 }
