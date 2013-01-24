@@ -27,4 +27,29 @@ cp build/libs/jersey-starterkit.war /Applications/apache-tomcat-6.0.33/webapps/
 3) Confirm that it is running by fetching the URL at on webcontainer + /jersey-helloworld/rest/hello.  On my machine:
 ```
 curl localhost:8080/jersey-starterkit/rest/hello
+
+Opening in Eclipse
+==================
+If you use Eclipse, the gradle scripts are nice enough to create your classpath files.
+
+If you have gradle installed, run:
 ```
+gradle eclipseClasspath
+```
+
+If you do not have gradle installed, run the gradle wrapper:
+```
+./g eclipse
+```
+
+Now you can import the project into eclipse.
+
+Logging
+=======
+There is a log4j configuration defined in `src/main/resources/log4j.properties`.  By default this will log to the STDOUT and to a series of log files.  Change the logging configuration as needed.
+
+If you would like to use the default logging, create the logging folders:
+```
+> sudo mkdir /restapi
+> chmod a+wr /restapi
+````

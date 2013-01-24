@@ -9,11 +9,19 @@ repositories {
 dependencies {
 	compile "javax.ws.rs:jsr311-api:1.1.1"
 
-	compile 'com.sun.jersey:jersey-server:1.13'
-	compile 'com.sun.jersey:jersey-core:1.13'
-	compile 'com.sun.jersey:jersey-client:1.13'
-	compile 'com.sun.jersey:jersey-servlet:1.13'
-	compile 'com.sun.jersey:jersey-json:1.13'
+
+	compile 'com.sun.jersey:jersey-server:1.16'
+	compile 'com.sun.jersey:jersey-core:1.16'
+	compile 'com.sun.jersey:jersey-client:1.16'
+	compile 'com.sun.jersey:jersey-servlet:1.16'
+	compile 'com.sun.jersey:jersey-json:1.16'
+	
+	compile 'com.yammer.metrics:metrics-core:2.2.0'
+	compile 'com.yammer.metrics:metrics-servlet:2.2.0'
+	compile 'com.yammer.metrics:metrics-jersey:2.2.0'
+	compile 'com.yammer.metrics:metrics-graphite:2.2.0'
+	
+	compile 'log4j:log4j:1.2.16'
 
 	testCompile "junit:junit-dep:4.10"
 	
