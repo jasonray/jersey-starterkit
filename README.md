@@ -1,6 +1,6 @@
 Overview
 ========
-This is a starter project using jax-rs / jersey.  This particular branch demonstrates using swagger to document the rest api.
+This is a starter project using jax-rs / jersey.  This particular branch demonstrates using swagger [http://developers.helloreverb.com/swagger/] to document the rest api.
 
 How-to run
 ==========
