@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0" targetNamespace="http://api.ifyouwannabecool.com/" xmlns:link="http://api.ifyouwannabecool.com/link" xmlns:persona="http://api.ifyouwannabecool.com/persona" xmlns:api="http://api.ifyouwannabecool.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://api.ifyouwannabecool.com/link" schemaLocation="link.xsd"/>
+  <xs:import namespace="http://api.ifyouwannabecool.com/persona" schemaLocation="persona.xsd"/>
+  <xs:element name="ExclusiveGroupException" type="api:ExclusiveGroupException"/>
+  <xs:complexType name="ExclusiveGroupException">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[Thrown when trying to add someone to a social group that is exclusive.]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="groupId" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupLeader" type="persona:persona" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PermissionDeniedException" type="api:PermissionDeniedException"/>
+  <xs:complexType name="PermissionDeniedException">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[Thrown when an attempt is made to do something without the correct permissions.]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="addToSocialGroup" type="api:addToSocialGroup"/>
+  <xs:complexType name="addToSocialGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "addToSocialGroup". (Adds a persona to a social group.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="groupId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the group to add the persona to.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="personaId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the persona to add to the group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="addToSocialGroupResponse" type="api:addToSocialGroupResponse"/>
+  <xs:complexType name="addToSocialGroupResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "addToSocialGroup". (Adds a persona to a social group.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Whether the persona was successfully added.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="createSocialGroup" type="api:createSocialGroup"/>
+  <xs:complexType name="createSocialGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "createSocialGroup". (Create a social group.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="groupLeader" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the group leader.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="memberIds" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The ids of the members of the group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="exclusive" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Whether the group is exclusive.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="createSocialGroupResponse" type="api:createSocialGroupResponse"/>
+  <xs:complexType name="createSocialGroupResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "createSocialGroup". (Create a social group.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="link:socialGroup" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The group that was created.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="deletePersona" type="api:deletePersona"/>
+  <xs:complexType name="deletePersona">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "deletePersona". (Delete a persona.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="personaId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the persona to delete.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="deletePersonaResponse" type="api:deletePersonaResponse"/>
+  <xs:complexType name="deletePersonaResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "deletePersona". (Delete a persona.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" minOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[Whether the persona was successfully deleted.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="readGroup" type="api:readGroup"/>
+  <xs:complexType name="readGroup">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "readGroup". (Read the specified social group.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="groupId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="readGroupResponse" type="api:readGroupResponse"/>
+  <xs:complexType name="readGroupResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "readGroup". (Read the specified social group.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="link:socialGroup" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The social group.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="readPersona" type="api:readPersona"/>
+  <xs:complexType name="readPersona">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "readPersona". (Reads a persona.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="personaId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The id of the persona to read.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="readPersonaResponse" type="api:readPersonaResponse"/>
+  <xs:complexType name="readPersonaResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "readPersona". (Reads a persona.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="return" type="persona:persona" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The persona.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="storePersona" type="api:storePersona"/>
+  <xs:complexType name="storePersona">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit request wrapper for operation "storePersona". (Store a persona.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="persona" type="persona:persona" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>
+            <![CDATA[The persona to store.]]>
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="storePersonaResponse" type="api:storePersonaResponse"/>
+  <xs:complexType name="storePersonaResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <![CDATA[doc/lit response wrapper for operation "storePersona". (Store a persona.)]]>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>

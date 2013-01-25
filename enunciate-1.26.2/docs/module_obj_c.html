@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+  <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+  <title>enunciate</title>
+  <meta name="author" content="Ryan Heaton" />
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+
+    <div class="title">
+      <h1>enunciate</h1>
+      <p>articulate your web api.</p>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <a href="index.html">Introduction</a>
+    <a href="getting_started.html">Getting Started</a>
+    <a href="user_guide.html">User Guide</a>
+    <a href="http://docs.codehaus.org/display/ENUNCIATE/FAQ">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="downloads.html">Download</a>
+
+    <div class="clearer"><span></span></div>
+  </div>
+
+  <div class="main">
+
+    <div class="content">
+<h1>Objective C Module</h1>
+
+<p>The Objective C module generates Objective C classes and (de)serialization functions that can be used in conjunction with <a href="http://xmlsoft.org/">libxml2</a>
+to (de)serialize the REST resources as they are represented as XML data.</p>
+
+<p>The order of the Objective C deployment module is 0, as it doesn't depend on any artifacts exported by any other module.</p>
+
+<ul>
+<li><a href="#config">configuration</a></li>
+</ul>
+
+<h1><a name="config">Configuration</a></h1>
+
+<p>The Objective C module is configured with the "obj-c" element under the "modules" element of the enunciate configuration file. It supports the following
+attributes:</p>
+
+<ul>
+<li>The "label" attribute is the label for the Objective C API.  This is the name by which the file will be identified (producing [label].m and [label].h).
+By default the label is the same as the Enunciate project label.</li>
+<li>The "forceEnable" attribute is used to force-enable the Objective C module. By default, the Objective C module is enabled only if REST endpoints are found in the project.</li>
+<li>The "enumConstantNamePattern" attribute defines the <a href="http://java.sun.com/javase/6/docs/api/java/util/Formatter.html#syntax">format string</a> for
+converting an enum constant name to a unique c-style constant name. The arguments passed to the format string are: (1) the project label (2) the namespace id
+of the type definition (3) the name of the type definition (4) the NOT decapitalized annotation-specified client name of the type declaration
+(5) the decapitalized annotation-specified client name of the type declaration (6) the NOT-decapitalized simple name of the type declaration
+(7) the decapitalized simple name of the type declaration (8) the package identifier (9) the annotation-specified client name of the enum contant
+(10) the simple name of the enum constant. All tokens will be "scrubbed" by replacing any non-word character with the "_" character.
+The default value for this pattern is "%1$S_%2$S_%3$S_%9$S".</li>
+<li>The "typeDefinitionNamePattern" attribute defines the <a href="http://java.sun.com/javase/6/docs/api/java/util/Formatter.html#syntax">format string</a> for
+converting an type definition name to a unique c-style name. The arguments passed to the format string are: (1) the project label (2) the namespace id
+of the type definition (3) the name of the type definition (4) the NOT decapitalized annotation-specified client name of the type declaration
+(5) the decapitalized annotation-specified client name of the type declaration (6) the NOT-decapitalized simple name of the type declaration
+(7) the decapitalized simple name of the type declaration (8) the package identifier. All tokens will be "scrubbed" by replacing any non-word character
+with the "_" character. The default value for this pattern is "%1$S%2$S%4$s".</li>
+<li>The "packageIdentifierPattern" attribute defines the <a href="http://java.sun.com/javase/6/docs/api/java/util/Formatter.html#syntax">format string</a> for
+creating a unique package identifier for a given package. The arguments passed to the format string will be each subpackage. So, for package "org.codehaus.enunciate.samples.c",
+The arguments are (1) org (2) codehaus (3) enunciate (4) samples (5) c. The default package identifier is the package name. The package identifier
+is in turn passed as an argument to the "enumConstantNamePattern" and to the "typeDefinitionNamePattern".</li>
+<li>The 'translateIdTo' attribute specifies what to use as the name of an accessor when in Java it's named 'id' (which is a keyword in Objective C).</li>
+<li>The 'separateCommonCode' attribute tells Enunciate to keep the code that is common to all Enunciate-generated projects separate from the code that is
+generated specifically for this project. Default: true.</li>
+</ul>
+
+<p>In addition to the attributes specified above, the Objective C module configuration supports an arbitrary number of "package" child elements, used to
+explicitly assign package identifiers to each package. The "package" child element supports a "name" attribute (used to name the package) and an "identifier" attribute.</p>
+    </div>
+
+    <div class="sidenav">
+    <h1>Home</h1>
+    <ul>
+      <li><a href="index.html">introduction</a></li>
+      <li><a href="getting_started.html">getting started</a></li>
+      <li><a href="downloads.html">download</a></li>
+      <li><a href="support.html">support/lists</a></li>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE">wiki</a></li>
+      <li><a href="license.txt">license</a></li>
+    </ul>
+
+    <h1>Documentation</h1>
+    <ul>
+      <li><a href="executables.html">invoking Enunciate</a></li>
+      <li><a href="artifacts.html">artifacts</a></li>
+      <li><a href="user_guide.html">user guide</a></li>
+      <li><a href="modules.html">modules</a></li>
+      <li><a href="api/index.html">javadocs</a></li>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE/Known+Issues">known issues</a></li>
+    </ul>
+
+    <h1>Developers</h1>
+    <ul>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE/Architecture+Guide">architecture</a></li>
+      <li><a href="http://jira.codehaus.org/browse/ENUNCIATE?selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel">roadmap</a></li>
+      <li><a href="http://jira.codehaus.org/browse/ENUNCIATE">bugs and tasks</a></li>
+      <li><a href="https://github.com/stoicflame/enunciate">source repository</a></li>
+    </ul>
+
+    <h1>References</h1>
+    <ul>
+      <li><a href="https://jsr311.dev.java.net/">JAX-RS</a></li>
+      <li><a href="https://jaxb.dev.java.net/">JAXB 2</a></li>
+      <li><a href="http://java.sun.com/webservices/jaxws/">JAX-WS</a></li>
+      <li><a href="https://jersey.dev.java.net/">Jersey</a></li>
+      <li><a href="http://cxf.apache.org">CXF</a></li>
+      <li><a href="http://www.springframework.org">Spring</a></li>
+      <li><a href="http://code.google.com/webtoolkit/">GWT</a></li>
+      <li><a href="http://www.adobe.com/products/flex/">Flex</a></li>
+      <li><a href="http://apt-jelly.sourceforge.net/">apt-jelly</a></li>
+      <li><a href="http://weblogs.java.net/blog/stoicflame/">Ryan's Blog</a></li>
+    </ul>
+
+    </div>
+
+    <div class="clearer"><span></span></div>
+
+  </div>
+
+  <div class="footer">&copy; 2006-2009 <a href="http://www.webcohesion.com/">Web Cohesion</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a
+    href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://templates.arcsin.se">Arcsin</a>
+  </div>
+
+</div>
+
+<div class="donations">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="HXSXBXUT63RCG">
+
+      <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="Donate to Enunciate Via PayPal">
+      <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+      
+      <a href="http://flattr.com/thing/20006/Enunciate" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11976408-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+
+</html>

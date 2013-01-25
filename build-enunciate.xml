@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project basedir="." default="generate_icd" name="jersey-starterkit">
+	<!--The ${enunciate.home} property should point to the Enunciate home distribution directory. -->
+	<property name="enunciate.home" value="enunciate-1.26.2"/>
+	<path id="enunciate.classpath">
+		<!--this pulls in enunciate library files to be used to generate documentation -->
+		<fileset dir="${enunciate.home}/lib">
+			<include name="*.jar"/>
+		</fileset>
+		<!-- this is the extract of the war file, and picking up its dependencies (working to get this automatically to occur during build scripts) -->
+		<fileset dir="build/enunciate-working-area/war-working-area">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="build/libs">
+			<include name="**/*.jar"/>
+		</fileset>
+		<!-- this pulls in some java framework libraries used to generate documentation -->
+		<fileset dir="${java.home}">
+			<include name="lib/tools.jar"/>
+		</fileset>
+	</path>
+	<target name="generate_icd">
+		<enunciate basedir="src/main/java" configFile="enunciate.xml">
+			<include name="**/*.java"/>
+			<classpath refid="enunciate.classpath"/>
+			<export artifactId="docs" destination="build/enunciate-working-area/generated-icd/healthadapter-icd.tar"/>
+		</enunciate>
+	</target>
+	<!--define the task...-->
+	<taskdef name="enunciate" classname="org.codehaus.enunciate.main.EnunciateTask">
+		<classpath refid="enunciate.classpath"/>
+	</taskdef>
+</project>

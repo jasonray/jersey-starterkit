@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+  <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+  <title>enunciate</title>
+  <meta name="author" content="Ryan Heaton" />
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+
+    <div class="title">
+      <h1>enunciate</h1>
+      <p>articulate your web api.</p>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <a href="index.html">Introduction</a>
+    <a href="getting_started.html">Getting Started</a>
+    <a href="user_guide.html">User Guide</a>
+    <a href="http://docs.codehaus.org/display/ENUNCIATE/FAQ">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="downloads.html">Download</a>
+
+    <div class="clearer"><span></span></div>
+  </div>
+
+  <div class="main">
+
+    <div class="content">
+<h1>JBoss Module</h1>
+
+<p>The JBoss module assembles a JBoss-based server-side application for hosting the WS endpoints.</p>
+
+<ul>
+<li><a href="#steps">steps</a></li>
+<li><a href="#config">configuration</a></li>
+<li><a href="#artifacts">artifacts</a></li>
+</ul>
+
+<h1><a name="steps">Steps</a></h1>
+
+<h3>generate</h3>
+
+<p>The "generate" step generates the configuration files.</p>
+
+<h1><a name="config">Configuration</a></h1>
+
+<h3>Content Negotiation</h3>
+
+<p>Enuncite provides content type negotiation (conneg) to Jersey that conforms to the <a href="module_rest.html#contentTypes">content type negotiation of
+the Enunciate REST module</a>.  This means that each resource is mounted from the REST subcontext (see above) but ALSO from a subcontext that conforms to the
+id of each content type that the resource supports.  So, if the content type id of the "application/xml" content type is "xml" then the resource at path
+"mypath" will be mounted at both "/rest/mypath" and "/xml/mypath".</p>
+
+<p>The content types for each JAX-RS resource are declared by the @Produces annotation. The content type ids are customized with the
+"enunciate/services/rest/content-types" element in the Enunciate configuration. Enunciate supplies providers for the "application/xml" and "application/json"
+content types by default.</p>
+
+<p>The JBoss module supports the following configuration attributes:</p>
+
+<ul>
+<li>The "useSubcontext" attribute is used to enable/disable mounting the JAX-RS resources at the rest subcontext. Default: "true".</li>
+<li>The "usePathBasedConneg" attribute is used to enable/disable path-based conneg (see above). Default: "false".</a></li>
+<li>The "enableJaxws" attribute (boolean) can be used to disable the JAX-WS support, leaving the JAX-WS support to another module if necessary. Default: true</li>
+<li>The "enableJaxrs" attribute (boolean) can be used to disable the JAX-RS (RESTEasy) support, leaving the JAX-RS support to another module if necessary. Default: true</li>
+</ul>
+
+<p>The JBoss module also supports a list of <tt>option</tt> child elements that each support a 'name' and 'value' attribute. This can be used to configure the RESTEasy
+mechanism, and the properties will be passed along as context parameters.
+<a href="http://docs.jboss.org/resteasy/docs/2.0.0.GA/userguide/html/Installation_Configuration.html#d0e72">See the RESTEasy docs for details</a>.</p>
+
+<h1><a name="artifacts">Artifacts</a></h1>
+
+<p>The JBoss deployment module exports no artifacts.</p>
+    </div>
+
+    <div class="sidenav">
+    <h1>Home</h1>
+    <ul>
+      <li><a href="index.html">introduction</a></li>
+      <li><a href="getting_started.html">getting started</a></li>
+      <li><a href="downloads.html">download</a></li>
+      <li><a href="support.html">support/lists</a></li>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE">wiki</a></li>
+      <li><a href="license.txt">license</a></li>
+    </ul>
+
+    <h1>Documentation</h1>
+    <ul>
+      <li><a href="executables.html">invoking Enunciate</a></li>
+      <li><a href="artifacts.html">artifacts</a></li>
+      <li><a href="user_guide.html">user guide</a></li>
+      <li><a href="modules.html">modules</a></li>
+      <li><a href="api/index.html">javadocs</a></li>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE/Known+Issues">known issues</a></li>
+    </ul>
+
+    <h1>Developers</h1>
+    <ul>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE/Architecture+Guide">architecture</a></li>
+      <li><a href="http://jira.codehaus.org/browse/ENUNCIATE?selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel">roadmap</a></li>
+      <li><a href="http://jira.codehaus.org/browse/ENUNCIATE">bugs and tasks</a></li>
+      <li><a href="https://github.com/stoicflame/enunciate">source repository</a></li>
+    </ul>
+
+    <h1>References</h1>
+    <ul>
+      <li><a href="https://jsr311.dev.java.net/">JAX-RS</a></li>
+      <li><a href="https://jaxb.dev.java.net/">JAXB 2</a></li>
+      <li><a href="http://java.sun.com/webservices/jaxws/">JAX-WS</a></li>
+      <li><a href="https://jersey.dev.java.net/">Jersey</a></li>
+      <li><a href="http://cxf.apache.org">CXF</a></li>
+      <li><a href="http://www.springframework.org">Spring</a></li>
+      <li><a href="http://code.google.com/webtoolkit/">GWT</a></li>
+      <li><a href="http://www.adobe.com/products/flex/">Flex</a></li>
+      <li><a href="http://apt-jelly.sourceforge.net/">apt-jelly</a></li>
+      <li><a href="http://weblogs.java.net/blog/stoicflame/">Ryan's Blog</a></li>
+    </ul>
+
+    </div>
+
+    <div class="clearer"><span></span></div>
+
+  </div>
+
+  <div class="footer">&copy; 2006-2009 <a href="http://www.webcohesion.com/">Web Cohesion</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a
+    href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://templates.arcsin.se">Arcsin</a>
+  </div>
+
+</div>
+
+<div class="donations">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="HXSXBXUT63RCG">
+
+      <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="Donate to Enunciate Via PayPal">
+      <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+      
+      <a href="http://flattr.com/thing/20006/Enunciate" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11976408-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+
+</html>

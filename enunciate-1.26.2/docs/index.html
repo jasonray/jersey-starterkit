@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+  <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+  <title>enunciate</title>
+  <meta name="author" content="Ryan Heaton" />
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+
+    <div class="title">
+      <h1>enunciate</h1>
+      <p>articulate your web api.</p>
+    </div>
+
+  </div>
+
+  <div class="navigation">
+    <a href="index.html">Introduction</a>
+    <a href="getting_started.html">Getting Started</a>
+    <a href="user_guide.html">User Guide</a>
+    <a href="http://docs.codehaus.org/display/ENUNCIATE/FAQ">FAQ</a>
+    <a href="support.html">Support</a>
+    <a href="downloads.html">Download</a>
+    
+    <div class="clearer"><span></span></div>
+  </div>
+
+  <div class="main">
+
+    <div class="content">
+
+      <div class="sidenews">
+        <p><b>Enunciate 1.26 Released!</b></p>
+        <p>Enunciate 1.26 includes support for Java 7 and no longer supports Java 5. In also includes a large number of
+          <a href="http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&jqlQuery=project+%3D+ENUNCIATE+AND+fixVersion+%3D+&quot;1.26&quot;">bug fixes and minor enhancements</a>.</p>
+        <p><a href="downloads.html">Click here</a> to download.</p>
+      </div>
+
+      <h1>The Basics</h1>
+
+      <p>Enunciate is an engine for dramatically enhancing your Java Web service API.</p>
+
+      <p>It's simple. You develop your Web service API using
+        <a href="#" onmouseover="overlib('Technologies such as JAX-RS, JAX-WS, and JAXB', ABOVE, BACKGROUND, 'img/sidenavh1.gif'); return true;" onmouseout="nd(); return true;">standard Java technologies</a>
+        and attach Enunciate to your
+        <a href="#" onmouseover="overlib('Via Maven plugin, Ant target, etc.', ABOVE, BACKGROUND, 'img/sidenavh1.gif'); return true;" onmouseout="nd(); return true;">build process</a>.
+        Suddenly, your Web service API is boasting some pretty impressive features:
+      </p>
+
+      <ul>
+        <li>Full HTML documentation of your services, scraped from your JavaDocs.</li>
+        <li>Client-side libraries (e.g. Java, .NET, iPhone, Ruby, Flex, AJAX, GWT, etc.) for developers who want to interface with your API.</li>
+        <li>Interface Definition Documents (e.g. WSDL, WADL, XML-Schema, etc.)</li>
+        <li>Etc.</li>
+      </ul>
+
+      <p>Notice that the runtime of your application isn't affected. Enunciate is primarily a build-time tool; it's intent is to
+      "get out of the way" so Jersey or Metro or CXF or JBoss-WS can do their job processing your Web service requests. Of course,
+      if you'd like to take advantage of Enunciate's support for your runtime container, you may enjoy some other features.</p>
+
+      <h1>Some Use Cases</h1>
+
+      <p>Consider some of these successful applications of Enunciate:</p>
+
+      <ul>
+        <li>Development of a Web service API, where documentation is updated (including fully-up-to-date client libraries) as part of the build process.</li>
+        <li>iPhone/iPad application development where the Web service API is invoked via Enunciate-generated Objective-C libraries.</li>
+        <li>AJAX application development via GWT where the Web service API is invoked via Enunciate-generated GWT libraries which include GWT-RPC invocations
+        or even Enunciate-generated <a href="http://googlewebtoolkit.blogspot.com/2008/08/getting-to-really-know-gwt-part-2.html">JSON overlays</a>
+        via REST/JSON invocation.</li>
+        <li>Flex application development where the Web service API is invoked via Enunciate-generated ActionScript libraries.</li>
+      </ul>
+
+      <h1>Getting Started</h1>
+
+      <p>You may want to start with the <a href="getting_started.html">getting started guide</a>, which will walk you through the development
+      of a basic Web service API. To integrate Enunciate into your existing project, take a look at the <a href="executables.html">ways to attach
+      Enunciate to your build process</a> and take note of <a href="http://docs.codehaus.org/display/ENUNCIATE/Documentation+Only">this document</a>
+      if you only want to leverage Enunciate's documentation and client-side library capabilities.</p>
+
+      <p>If you're a "show me" kind of a learner, Enunciate has some <a href="https://github.com/stoicflame/enunciate/tree/master/integration-tests">example
+        applications</a> that you can clone from Github that are run and validated as part of the Enunciate release process. You can also browse some
+        <a href="http://docs.codehaus.org/display/ENUNCIATE/A+Rich+Web+service+API+for+your+favorite+framework">tutorials for integrating Enunciate with your
+        favorite framework</a>.</p>
+
+      <p>Once you've got some momentum, you'll probably find the <a href="user_guide.html">user guide</a> and <a href="modules.html">module documentation</a>
+        useful to refer to Enunciate's configuration options. And if you get stuck, check out the <a href="http://docs.codehaus.org/display/ENUNCIATE/FAQ">FAQ</a>
+        or post your question to the <a href="support.html">mailing lists</a>. And if you need some extra help, consider asking about <a href="support.html">commercial
+        support</a>.</p>
+
+      <h1>About</h1>
+
+      <p>Enunciate is an open-source project, licenced under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, version 2.0</a>.  It was
+        designed and built by Ryan Heaton, working for <a href="http://www.familysearch.org/">familysearch.org</a>.  Comments, enhancements or bug fixes to the
+        project are welcome.</p>
+
+    </div>
+
+    <div class="sidenav">
+    <h1>Home</h1>
+    <ul>
+      <li><a href="index.html">introduction</a></li>
+      <li><a href="getting_started.html">getting started</a></li>
+      <li><a href="downloads.html">download</a></li>
+      <li><a href="support.html">support/lists</a></li>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE">wiki</a></li>
+      <li><a href="license.txt">license</a></li>
+    </ul>
+
+    <h1>Documentation</h1>
+    <ul>
+      <li><a href="executables.html">invoking Enunciate</a></li>
+      <li><a href="artifacts.html">artifacts</a></li>
+      <li><a href="user_guide.html">user guide</a></li>
+      <li><a href="modules.html">modules</a></li>
+      <li><a href="api/index.html">javadocs</a></li>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE/Known+Issues">known issues</a></li>
+    </ul>
+
+    <h1>Developers</h1>
+    <ul>
+      <li><a href="http://docs.codehaus.org/display/ENUNCIATE/Architecture+Guide">architecture</a></li>
+      <li><a href="http://jira.codehaus.org/browse/ENUNCIATE?selectedTab=com.atlassian.jira.plugin.system.project%3Aroadmap-panel">roadmap</a></li>
+      <li><a href="http://jira.codehaus.org/browse/ENUNCIATE">bugs and tasks</a></li>
+      <li><a href="https://github.com/stoicflame/enunciate">source repository</a></li>
+    </ul>
+
+    <h1>References</h1>
+    <ul>
+      <li><a href="https://jsr311.dev.java.net/">JAX-RS</a></li>
+      <li><a href="https://jaxb.dev.java.net/">JAXB 2</a></li>
+      <li><a href="http://java.sun.com/webservices/jaxws/">JAX-WS</a></li>
+      <li><a href="https://jersey.dev.java.net/">Jersey</a></li>
+      <li><a href="http://cxf.apache.org">CXF</a></li>
+      <li><a href="http://www.springframework.org">Spring</a></li>
+      <li><a href="http://code.google.com/webtoolkit/">GWT</a></li>
+      <li><a href="http://www.adobe.com/products/flex/">Flex</a></li>
+      <li><a href="http://apt-jelly.sourceforge.net/">apt-jelly</a></li>
+      <li><a href="http://weblogs.java.net/blog/stoicflame/">Ryan's Blog</a></li>
+    </ul>
+
+    </div>
+
+    <div class="clearer"><span></span></div>
+
+  </div>
+
+  <div class="footer">&copy; 2006-2010 <a href="http://www.webcohesion.com/">Web Cohesion</a>. Valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &amp; <a
+    href="http://validator.w3.org/check?uri=referer">XHTML</a>. Template design by <a href="http://templates.arcsin.se">Arcsin</a>
+  </div>
+
+</div>
+
+<div class="donations">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_s-xclick">
+      <input type="hidden" name="hosted_button_id" value="HXSXBXUT63RCG">
+
+      <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="Donate to Enunciate Via PayPal">
+      <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+      
+      <a href="http://flattr.com/thing/20006/Enunciate" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+
+</div>
+
+<div id="overDiv" style="position:absolute; visibility:hide; z-index:1;">
+</div>
+
+<script type="text/javascript" src="overlib.js"></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-11976408-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+
+</html>
