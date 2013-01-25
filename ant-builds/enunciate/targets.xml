@@ -9,7 +9,7 @@
 			<classpath>
 				<pathelement path="${enunciate.HealthAdapter.dependencies}"/>
 			</classpath>
-			<export artifactId="docs" destination="${enunciate.destinationDirectory}/healthadapter-icd.tar"/>
+			<export artifactId="docs" destination="${enunciate.destinationDirectory}/jersey-starterkit-icd.tar"/>
 		</enunciate>
 	</target>
 </project>

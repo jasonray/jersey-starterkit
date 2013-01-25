@@ -9,7 +9,6 @@ repositories {
 dependencies {
 	compile "javax.ws.rs:jsr311-api:1.1.1"
 
-
 	compile 'com.sun.jersey:jersey-server:1.16'
 	compile 'com.sun.jersey:jersey-core:1.16'
 	compile 'com.sun.jersey:jersey-client:1.16'
@@ -27,16 +26,15 @@ dependencies {
 }
 
 task hello << {
-    String greeting = 'hello from Ant'
-    ant.echo(message: greeting)
+    println('hello world')
 }
 
-
-	ant.importBuild 'ant-builds/enunciate/targets.xml'
-
-
-
+war << {
+   println(dependencies.files)
+}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.3'
 }
+
+ant.importBuild 'ant-builds/enunciate/targets.xml'
