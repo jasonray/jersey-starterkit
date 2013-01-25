@@ -19,7 +19,6 @@
 
 	<property name="enunciate.baseSourceDirectory" value="../../" /> 
 	<property name="enunciate.destinationDirectory" value="../../build/icd" />
-	<property name="enunciate.HealthAdapter.dependencies" value="" />
 	
 </project>
 
