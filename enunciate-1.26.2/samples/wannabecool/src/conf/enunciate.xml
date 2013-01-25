@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<enunciate label="wannabecool" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.26.xsd">
+   <namespaces>
+      <namespace id="api" uri="http://api.example.com/" />
+      <namespace id="link" uri="http://api.example.com/link" />
+      <namespace id="persona" uri="http://api.example.com/persona" />
+   </namespaces>
+   <modules>
+      <!-- Docs -->
+      <docs splashPackage="org.codehaus.enunciate.api" title="wannabecool" copyright="wannabecool.com"/>
+   </modules>
+</enunciate>

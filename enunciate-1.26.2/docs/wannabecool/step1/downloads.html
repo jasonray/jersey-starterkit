@@ -1,0 +1,395 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Files and Libraries</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all" -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/prettify.css">
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+
+</head>
+
+<body class="home">
+
+  <div class="container">
+    <header>
+      <div id="header" class="column first last span-20">
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">Files and Libraries</a></div>
+        <div id="primary" class="column span-18 append-1 prepend-1 first last">
+          <ul class="navigation">
+            <li id="nav-rest"><a href="rest.html">REST</a></li>
+            <li id="nav-data"><a href="model.html">Data Model</a></li>
+            <li id="nav-downloads"><a href="downloads.html">Files and Libraries</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="xbreadcrumbs" id="breadcrumbs">
+            <li>
+              <a href="index.html" class="home">Home</a> &gt;
+            </li>
+            <li class="current">
+              <a href="downloads.html">Files and Libraries</a>
+              <ul>
+                <li><a href="model.html">Data Model</a></li>
+                <li><a href="downloads.html">Files and Libraries</a></li>
+                <li><a href="rest.html">REST</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="main" class="column first last span-20">
+  <h1>Files and Libraries</h1>
+
+  <p>The following files and libraries are available:</p>
+
+  <ul>
+    <li><a href="#C Client Library">C Client Library</a></li>
+    <li><a href="#.NET Client Library">.NET Client Library</a></li>
+    <li><a href="#Java Client Library">Java Client Library</a></li>
+    <li><a href="#Java JSON Client Library">Java JSON Client Library</a></li>
+    <li><a href="#Objective C Client Library">Objective C Client Library</a></li>
+  </ul>
+  <a name="C Client Library"></a>
+  <h2>C Client Library</h2>
+  <p class="note">Created Dec 10, 2012 1:59:02 PM</p>
+  <p><h1>
+  Introduction
+</h1>
+
+<p>
+  The C module generates the source code for the ANSI-C-compatible data structures and (de)serialization
+  functions that can be used in conjunction with <a href="http://xmlsoft.org/">libxml2</a> to (de)serialize
+  the REST resources as they are represented as XML data.
+</p>
+
+<p>
+  The generated C source code depends on the <a href="http://xmlsoft.org/html/libxml-xmlreader.html">XML Reader API</a>
+  and the <a href="http://xmlsoft.org/html/libxml-xmlwriter.html">XML Writer API</a> as well as the <tt>&lt;time.h&gt;</tt>,
+  <tt>&lt;string.h&gt;</tt>, and <tt>&lt;stdlib.h&gt;</tt> C standard libraries.
+</p>
+
+<h1>
+  REST XML Example
+</h1>
+
+<code class="prettyprint">
+#include &lt;enunciate.c&gt;
+//...
+
+xmlTextReaderPtr reader = ...; //set up the reader to the url.
+enunciate_ns0_persona *response_element = ...;
+response_element = xml_read_enunciate_ns0_persona(reader);
+
+//handle the response as needed...
+
+//free the enunciate_ns0_persona
+free_enunciate_ns0_persona(response_element);
+</code>
+</p>
+  <h3>Files</h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>size</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      <td><a href="enunciate.c">enunciate.c</a></td>
+      <td>47.43K</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="enunciate-common.c">enunciate-common.c</a></td>
+      <td>39.70K</td>
+      <td>Common code needed for all projects.</td>
+    </tr>
+  </table>
+  <a name=".NET Client Library"></a>
+  <h2>.NET Client Library</h2>
+  <p class="note">Created Dec 10, 2012 1:59:03 PM</p>
+  <p><h1>
+  Introduction
+</h1>
+
+
+<p>
+  The .NET client-side library defines the classes that can be (de)serialized to/from XML.
+  This is useful for accessing the REST endpoints that are published by this application.
+</p>
+
+<h1>
+  REST Example
+</h1>
+
+<code class="prettyprint">
+//read a resource from a REST url
+Uri uri = new Uri(...);
+
+XmlSerializer s = new XmlSerializer(
+  typeof( Persona )
+);
+
+  //Create the request object
+WebRequest req = WebRequest.Create(uri);
+WebResponse resp = req.GetResponse();
+Stream stream = resp.GetResponseStream();
+TextReader r = new StreamReader( stream );
+
+Persona order = (Persona) s.Deserialize( r );
+
+//handle the result as needed...
+</code>
+<p>
+  This bundle contains C# source code.
+</p></p>
+  <h3>Files</h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>size</th>
+    </tr>
+    <tr>
+      <td><a href="enunciate-dotnet.zip">enunciate-dotnet.zip</a></td>
+      <td>920.00bytes</td>
+    </tr>
+  </table>
+  <a name="Java Client Library"></a>
+  <h2>Java Client Library</h2>
+  <p class="note">Created Dec 10, 2012 1:59:03 PM</p>
+  <p><h1>
+  Introduction
+</h1>
+
+<p>
+  The Java client-side library is used to access the Web service API for this application.
+</p>
+
+<p>
+  The JAX-WS client-side library is used to provide the set of Java objects that can be serialized
+  to/from XML using <a href="https://jaxb.dev.java.net/">JAXB</a>.  This is useful for accessing the
+  REST endpoints that are published by this application.
+</p>
+
+<h1>
+  REST Example (Raw JAXB)
+</h1>
+
+<code class="prettyprint">
+java.net.URL url = new java.net.URL(baseURL + "/persona/{id}");
+JAXBContext context = JAXBContext.newInstance( Persona.class );
+java.net.URLConnection connection = url.openConnection();
+connection.connect();
+
+Unmarshaller unmarshaller = context.createUnmarshaller();
+Persona result = (Persona) unmarshaller.unmarshal( connection.getInputStream() );
+//handle the result as needed...
+</code>
+
+<h1>
+  REST Example (Jersey client)
+</h1>
+
+<code class="prettyprint">
+com.sun.jersey.api.client.Client client = com.sun.jersey.api.client.Client.create();
+
+Persona result = client.resource(baseUrl + "/persona/{id}")
+  
+  .get(Persona.class);
+
+//handle the result as needed...
+</code>
+</p>
+  <h3>Files</h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>size</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      <td><a href="enunciate-client.jar">enunciate-client.jar</a></td>
+      <td>3.70K</td>
+      <td>The binaries for the Java client library.</td>
+    </tr>
+    <tr>
+      <td><a href="enunciate-client-sources.jar">enunciate-client-sources.jar</a></td>
+      <td>1.98K</td>
+      <td>The sources for the Java client library.</td>
+    </tr>
+  </table>
+  <a name="Java JSON Client Library"></a>
+  <h2>Java JSON Client Library</h2>
+  <p class="note">Created Dec 10, 2012 1:59:03 PM</p>
+  <p><h1>
+  Introduction
+</h1>
+
+<p>
+  The Java client-side library is used to provide the set of Java objects that can be serialized
+  to/from JSON using <a href="http://jackson.codehaus.org/">Jackson</a>.  This is useful for accessing the
+  JSON REST endpoints that are published by this application.
+</p>
+
+<h1>
+  REST Example (Raw Jackson)
+</h1>
+
+<code class="prettyprint">
+java.net.URL url = new java.net.URL(baseURL + "/persona/{id}");
+ObjectMapper mapper = new ObjectMapper();
+java.net.URLConnection connection = url.openConnection();
+connection.connect();
+
+Persona result = (Persona) mapper.readValue( connection.getInputStream(), Persona.class );
+//handle the result as needed...
+</code>
+
+</p>
+  <h3>Files</h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>size</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      <td><a href="enunciate-json-client.jar">enunciate-json-client.jar</a></td>
+      <td>2.52K</td>
+      <td>The binaries for the Java JSON client library.</td>
+    </tr>
+    <tr>
+      <td><a href="enunciate-json-client-sources.jar">enunciate-json-client-sources.jar</a></td>
+      <td>1.92K</td>
+      <td>The sources for the Java JSON client library.</td>
+    </tr>
+  </table>
+  <a name="Objective C Client Library"></a>
+  <h2>Objective C Client Library</h2>
+  <p class="note">Created Dec 10, 2012 1:59:02 PM</p>
+  <p><h1>
+  Introduction
+</h1>
+
+<p>
+  The Objective C module generates the source code for the Objective C classes and (de)serialization
+  functions that can be used in conjunction with <a href="http://xmlsoft.org/">libxml2</a> to (de)serialize
+  the REST resources as they are represented as XML data.
+</p>
+
+<p>
+  The generated Objective C source code depends on the <a href="http://xmlsoft.org/html/libxml-xmlreader.html">XML Reader API</a>
+  and the <a href="http://xmlsoft.org/html/libxml-xmlwriter.html">XML Writer API</a> as well as the base OpenStep foundation classes.
+</p>
+
+<h1>
+  REST XML Example
+</h1>
+
+<code class="prettyprint">
+#import &lt;enunciate.h&gt;
+//...
+
+ENUNCIATENS0Persona *responseElement;
+NSData *responseData; //data holding the XML from the response.
+NSURL *baseURL = ...; //the base url including the host and subpath.
+NSURL *url = [NSURL URLWithString: @"/persona/{id}" relativeToURL: baseURL];
+NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+NSURLResponse *response = nil;
+NSError *error = NULL;
+[request setHTTPMethod: @"GET"];
+
+//this example uses a synchronous request,
+//but you'll probably want to use an asynchronous call
+responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+ENUNCIATENS0Persona *responseElement = [ENUNCIATENS0Persona readFromXML: responseData];
+[responseElement retain];
+
+//handle the response as needed...
+</code>
+</p>
+  <h3>Files</h3>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>size</th>
+      <th>description</th>
+    </tr>
+    <tr>
+      <td><a href="enunciate.h">enunciate.h</a></td>
+      <td>2.92K</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="enunciate.m">enunciate.m</a></td>
+      <td>36.69K</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="enunciate-common.h">enunciate-common.h</a></td>
+      <td>12.81K</td>
+      <td>Common header needed for all projects.</td>
+    </tr>
+    <tr>
+      <td><a href="enunciate-common.m">enunciate-common.m</a></td>
+      <td>42.61K</td>
+      <td>Common implementation code needed for all projects.</td>
+    </tr>
+  </table>
+
+      <div class="clear" />
+    </div>
+    <footer>
+      <div id="footer">
+        Generated by <a href="http://enunciate.codehaus.org">Enunciate</a>.
+      </div>
+    </footer>
+  </div> <!--! end of #container -->
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
+
+  <!--manage the navigation menu-->
+  <script src="js/libs/xbreadcrumbs.js"></script>
+  <script>
+    $(function() {
+      $('#breadcrumbs').xBreadcrumbs();
+    });
+  </script>
+
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="js/libs/prettify/prettify.js"></script>
+  <script>
+    $(function() {
+      prettyPrint();
+    });
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+  <![endif]-->
+
+</body>
+</html>
