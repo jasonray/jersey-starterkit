@@ -26,6 +26,17 @@ dependencies {
 	testCompile "junit:junit-dep:4.10"
 }
 
+task hello << {
+    String greeting = 'hello from Ant'
+    ant.echo(message: greeting)
+}
+
+
+	ant.importBuild 'ant-builds/enunciate/targets.xml'
+
+
+
+
 task wrapper(type: Wrapper) {
     gradleVersion = '1.3'
 }
