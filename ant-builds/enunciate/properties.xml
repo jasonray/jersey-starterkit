@@ -7,6 +7,10 @@
 			<include name="*.jar"/>
 		</fileset>
 
+		<fileset dir="../../build/lib">
+			<include name="*.class"/>
+		</fileset>
+
 		<!-- this pulls in some java framework libraries used to generate documentation -->
 		<fileset dir="${java.home}">
 			<include name="lib/tools.jar"/>
@@ -19,6 +23,7 @@
 
 	<property name="enunciate.baseSourceDirectory" value="../../" /> 
 	<property name="enunciate.destinationDirectory" value="../../build/icd" />
+	
 	
 </project>
 
