@@ -5,8 +5,8 @@
 		<namespace id="atom" uri="http://www.w3.org/2005/Atom"/>
 	</namespaces>
 	<modules>
-		<docs title="HealthAdapter Interface Control Document" copyright="Don't be evil">
-			<download name="License" description="The license file governing the use of this API."/>
+		<docs title="HealthAdapter Interface Control Document" copyright="Don't be evil" css="enunciate-support/agilex.css">
+			<download name="License" file="LICENSE.txt" description="The license file governing the use of this API."/>
 		</docs>
 	</modules>
 </enunciate>

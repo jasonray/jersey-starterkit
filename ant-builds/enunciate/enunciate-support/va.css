@@ -1,0 +1,128 @@
+/* Author:  Benjamin Cushing */
+
+
+body {
+	background-color: #bfd6e9;
+	background-position: 1% 1%;
+	width: 100%;
+	}
+h1 {
+	padding: 10px 0 0 0;
+	}
+p {
+	margin: 8px 0;
+	}
+
+header {
+	background: #5e87b0; /* Old browsers */
+	background: -moz-linear-gradient(top, #5e87b0 0%, #002e52 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e87b0), color-stop(100%,#002e52)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #5e87b0 0%,#002e52 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #5e87b0 0%,#002e52 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #5e87b0 0%,#002e52 100%); /* IE10+ */
+	background: linear-gradient(top, #5e87b0 0%,#002e52 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e87b0', endColorstr='#002e52',GradientType=0 ); /* IE6-9 */
+	border-bottom: 4px solid #E3B338;
+	}
+	.column {
+		float: none;
+		}
+footer {
+	position: absolute;
+	left: 0;
+	bottom: -55px;
+	width: 100%;
+	padding: 30px 0
+	}
+#footer {
+	border-top: none;
+	}
+
+.container {
+	
+	width: 100%;
+	height: 100%;
+	
+	}
+#header {
+	margin-bottom: 0.4em;
+	width: 100%;
+ 	background-image: url('../US-DeptOfVeteransAffairs-Seal-Large.png');
+	background-repeat: no-repeat;
+	}
+	#header ul {
+		margin: 0;
+		}
+	#header div+div+div {
+		margin: 0 auto;
+		width: 840px;	
+		}
+	
+.xbreadcrumbs, .xbreadcrumbs li {
+	
+	}
+	.xbreadcrumbs {
+		padding-top: 20px;
+		background: none;
+		}
+	.xbreadcrumbs li {
+		position: inline;
+		}
+#primary {
+	padding: 0;
+	position: relative;
+	right: 0;
+	margin: 0;
+	line-height: 16px;
+	width: 100%;
+	}
+	#primary a {
+		color: white;	
+		}
+#site-name {
+	padding: 0;
+	margin: 0;
+	margin-left: 80px;
+	}
+	#site-name a {
+		font-family: futura, sans-serif;
+		text-transform: uppercase;
+		font-size: 2.2em;
+		letter-spacing: normal;
+		color: white;
+		text-shadow: 1px 1px 3px #000	;
+		}
+		#site-name a:visited {
+			color: white;
+			}
+	
+#main {
+	-webkit-box-shadow: 0px 0px 10px 0px #000; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow: 0px 0px 10px 0px #000; /* FF3.5 - 3.6 */
+	box-shadow: 0px 0px 10px 0px #000; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+	-webkit-border-radius: 12px; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
+	-moz-border-radius: 12px; /* FF1-3.6 */
+	border-radius: 12px;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #FC3;
+	margin: 40px auto;
+	width: 840px;
+	}
+	#main h1:first-child {
+		border-bottom: 3px solid #bfd6e9;
+		padding-bottom: 8px;
+		}
+	#main h2 {
+		border: none;
+		font-size: 1.3em;
+		padding-top: 0;
+		}
+	#main h3 {
+		font-size: 1em;
+		}
+	.note {
+		margin-top: 8px;
+		}
+
+

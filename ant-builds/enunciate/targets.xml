@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="enunciate.targets">
+	<import file="properties.xml"/>
+	<target name="generateIcd" depends="build">
+		<echo message="Generating ICD documentation using Enunciate"/>
+		<enunciate basedir="${enunciate.baseSourceDirectory}" configFile="enunciate.xml">
+			<include name="**/*.java"/>
+			<classpath refid="enunciate.classpath"/>
+			<classpath>
+				<pathelement path="${enunciate.HealthAdapter.dependencies}"/>
+			</classpath>
+			<export artifactId="docs" destination="${enunciate.destinationDirectory}/healthadapter-icd.tar"/>
+		</enunciate>
+	</target>
+</project>

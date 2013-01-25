@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="enunciate.properties">
+	<property name="enunciate.home" value="${env.ENUNCIATE_HOME}"/>
+	<path id="enunciate.classpath">
+		<!--this pulls in enunciate library files to be used to generate documentation -->
+		<fileset dir="${enunciate.home}/lib">
+			<include name="*.jar"/>
+		</fileset>
+		<!-- this pulls in some java framework libraries used to generate documentation -->
+		<fileset dir="${java.home}">
+			<include name="lib/tools.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef name="enunciate" classname="org.codehaus.enunciate.main.EnunciateTask">
+		<classpath refid="enunciate.classpath"/>
+	</taskdef>
+	
+	<property name="enunciate.baseSourceDirectory" value="" /> 
+	<property name="enunciate.destinationDirectory" value="" />
+	<property name="enunciate.HealthAdapter.dependencies" value="" />
+
+	
+</project>
