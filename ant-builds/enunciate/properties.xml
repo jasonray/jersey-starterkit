@@ -6,6 +6,7 @@
 		<fileset dir="${enunciate.home}/lib">
 			<include name="*.jar"/>
 		</fileset>
+
 		<!-- this pulls in some java framework libraries used to generate documentation -->
 		<fileset dir="${java.home}">
 			<include name="lib/tools.jar"/>
@@ -15,10 +16,10 @@
 	<taskdef name="enunciate" classname="org.codehaus.enunciate.main.EnunciateTask">
 		<classpath refid="enunciate.classpath"/>
 	</taskdef>
-	
+
 	<property name="enunciate.baseSourceDirectory" value="../../" /> 
 	<property name="enunciate.destinationDirectory" value="../../build/icd" />
 	<property name="enunciate.HealthAdapter.dependencies" value="" />
-
 	
 </project>
+
