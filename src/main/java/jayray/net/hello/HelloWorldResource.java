@@ -10,14 +10,14 @@ import org.apache.log4j.Logger;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
-@Path("hello")
+@Path("/hello.json")
 @Api(value = "/hello", description = "say hello")
 public class HelloWorldResource {
 	private static final Logger logger = Logger.getLogger(HelloWorldResource.class);
 
 	@GET
 	@ApiOperation(value = "say hello", notes = "Add extra notes here", responseClass = "java.lang.String")
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	public String sayhello() {
 		logger.debug("sample debug message");
 		logger.info("sample info message");
