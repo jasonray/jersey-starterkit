@@ -6,6 +6,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("hello")
+/**
+ * Sometimes the internet is lonely.  This resource will say hello.
+ * @return a simple greeting
+ */
 public class HelloWorldResource {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
