@@ -27,6 +27,7 @@ cp build/libs/jersey-starterkit.war /Applications/apache-tomcat-6.0.33/webapps/
 3) Confirm that it is running by fetching the URL at on webcontainer + /jersey-helloworld/rest/hello.  On my machine:
 ```
 curl localhost:8080/jersey-starterkit/rest/hello
+```
 
 Opening in Eclipse
 ==================
@@ -50,6 +51,6 @@ There is a log4j configuration defined in `src/main/resources/log4j.properties`.
 
 If you would like to use the default logging, create the logging folders:
 ```
-\> sudo mkdir /restapi
-\> chmod a+wr /restapi
+sudo mkdir /restapi
+chmod a+wr /restapi
 ```
