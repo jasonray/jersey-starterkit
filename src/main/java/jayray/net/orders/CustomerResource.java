@@ -6,9 +6,17 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+/**
+ * The customer resource endpoint is responsible for crud operations for the customer 
+ */
 @Path("customer")
 public class CustomerResource {
 
+	/**
+	 * Fetch a customer by id
+	 * @param id the unique id of the customer
+	 * @return This endpoint returns a customer 
+	 */
 	@GET
 	@Path("id/{id}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
