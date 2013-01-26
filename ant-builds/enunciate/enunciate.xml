@@ -2,6 +2,7 @@
 <enunciate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" label="HealthAdapter Interface Control Document" xsi:noNamespaceSchemaLocation="http://enunciate.codehaus.org/schemas/enunciate-1.25.xsd">
 	<namespaces>
 		<namespace id="atom" uri="http://www.w3.org/2005/Atom"/>
+		<namespace id="orders" uri="http://jayray.net/orders"/>
 	</namespaces>
 	<modules>
 		<docs title="Jersey Starter Kit Interface Control Document" copyright="Don't be evil" css="enunciate-support/agilex.css">
