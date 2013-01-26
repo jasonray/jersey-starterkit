@@ -29,12 +29,9 @@ task hello << {
     println('hello world')
 }
 
-war << {
-   println(dependencies.files)
-}
-
 task wrapper(type: Wrapper) {
     gradleVersion = '1.3'
 }
 
 ant.importBuild 'ant-builds/enunciate/targets.xml'
+ant.properties['enunciate.dependencies']=configurations.runtime.asPath

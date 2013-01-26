@@ -15,6 +15,9 @@
 
 	<taskdef name="enunciate" classname="org.codehaus.enunciate.main.EnunciateTask">
 		<classpath refid="enunciate.classpath"/>
+		<classpath>
+		    <pathelement path="${enunciate.dependencies}"/>
+		</classpath>
 	</taskdef>
 
 	<property name="enunciate.baseSourceDirectory" value="../../" /> 
