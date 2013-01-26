@@ -23,6 +23,5 @@
 	<property name="enunciate.baseSourceDirectory" value="../../" /> 
 	<property name="enunciate.destinationDirectory" value="../../build/icd" />
 	
-	
 </project>
 

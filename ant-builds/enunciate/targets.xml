@@ -7,7 +7,7 @@
 			<include name="**/*.java"/>
 			<classpath refid="enunciate.classpath"/>
 			<classpath>
-				<pathelement path="${enunciate.HealthAdapter.dependencies}"/>
+				<pathelement path="${enunciate.dependencies}"/>
 			</classpath>
 			<export artifactId="docs" destination="${enunciate.destinationDirectory}/jersey-starterkit-icd.tar"/>
 		</enunciate>
