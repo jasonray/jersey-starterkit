@@ -4,9 +4,9 @@ import javax.ws.rs.ext.ContextResolver;
 import javax.ws.rs.ext.Provider;
 import javax.xml.bind.JAXBContext;
 
-import jayray.net.orders2.Address;
-import jayray.net.orders2.Customer;
-import jayray.net.orders2.CustomerResource;
+import jayray.net.orders.Address;
+import jayray.net.orders.Customer;
+import jayray.net.orders.CustomerResource;
 
 import com.sun.jersey.api.json.JSONConfiguration;
 import com.sun.jersey.api.json.JSONJAXBContext;
