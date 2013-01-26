@@ -1,4 +1,4 @@
-package jayray.net.Orders;
+package jayray.net.orders;
 
 import java.util.ArrayList;
 import java.util.List;
