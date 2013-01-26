@@ -20,7 +20,7 @@
 		</classpath>
 	</taskdef>
 
-	<property name="enunciate.baseSourceDirectory" value="../../" /> 
+	<property name="enunciate.baseSourceDirectory" value="../../src" /> 
 	<property name="enunciate.destinationDirectory" value="../../build/icd" />
 	
 </project>
