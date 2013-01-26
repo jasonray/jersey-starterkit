@@ -6,7 +6,10 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import com.wordnik.swagger.annotations.Api;
+
 @Path("customer")
+@Api(value = "/customer", description = "This is the customer resource")
 public class CustomerResource {
 
 	@GET
