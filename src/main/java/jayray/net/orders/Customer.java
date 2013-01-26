@@ -6,7 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement()
+@XmlRootElement(namespace = Namespaces.OrdersNamespace)
 public class Customer {
 	private String id;
 	private String name;
@@ -28,7 +28,7 @@ public class Customer {
 		this.name = name;
 	}
 
-	@XmlElement(name="address")
+	@XmlElement(name = "address", namespace = Namespaces.OrdersNamespace)
 	public List<Address> getAddresses() {
 		return addresses;
 	}
