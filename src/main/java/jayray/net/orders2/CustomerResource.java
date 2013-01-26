@@ -1,4 +1,4 @@
-package jayray.net.orders;
+package jayray.net.orders2;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

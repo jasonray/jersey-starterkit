@@ -1,4 +1,4 @@
-package jayray.net.orders;
+package jayray.net.orders2;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
