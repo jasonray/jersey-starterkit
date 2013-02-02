@@ -36,4 +36,6 @@ public class CustomerResource {
 		customer.getAddresses().add(address);
 		return customer;
 	}
+	
+	
 }
