@@ -20,6 +20,8 @@ dependencies {
 	compile 'com.yammer.metrics:metrics-jersey:2.2.0'
 	compile 'com.yammer.metrics:metrics-graphite:2.2.0'
 	
+	compile 'org.mongodb:mongo-java-driver:2.10.1'
+	
 	testCompile "junit:junit-dep:4.10"
 }
 
