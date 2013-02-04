@@ -21,6 +21,7 @@ dependencies {
 	compile 'com.yammer.metrics:metrics-graphite:2.2.0'
 	
 	compile 'org.mongodb:mongo-java-driver:2.10.1'
+	compile 'com.google.code.gson:gson:2.2.2'
 	
 	testCompile "junit:junit-dep:4.10"
 }

@@ -1,5 +1,8 @@
 package jayray.net.orders;
 
+import static jayray.net.orders.DatabaseConnectionHelper.getConnection;
+import static jayray.net.orders.DatabaseConnectionHelper.releaseConnection;
+
 import java.net.URI;
 import java.net.UnknownHostException;
 
@@ -18,9 +21,9 @@ import javax.ws.rs.core.UriInfo;
 import org.bson.types.ObjectId;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
-import com.mongodb.Mongo;
 import com.mongodb.util.JSON;
 
 @Path("customer/raw")
@@ -30,36 +33,56 @@ public class RawCustomerResource {
 	@Produces({ MediaType.APPLICATION_JSON })
 	public String getCustomers() throws UnknownHostException {
 
-		Mongo m = new Mongo();
-		DBCollection data = m.getDB("test").getCollection("test");
+		DBCollection data;
+		DB db = getConnection();
+		try {
+			data = db.getCollection("customer");
+		} finally {
+			releaseConnection(db);
+		}
 
-		return JSON.serialize(data);
+		String json = JSON.serialize(data);
+		return json;
 	}
 
 	@GET
 	@Path("id/{id}")
 	@Produces({ MediaType.APPLICATION_JSON })
 	public String getCustomer(@PathParam("id") String id) throws UnknownHostException {
+		System.out.println("begin get customer " + id);
 
 		DBObject searchById = new BasicDBObject("_id", new ObjectId(id));
 
-		Mongo m = new Mongo();
-		DBObject data = m.getDB("test").getCollection("test").findOne(searchById);
+		DBObject data;
+		DB db = getConnection();
+		try {
+			data = db.getCollection("customer").findOne(searchById);
+		} finally {
+			releaseConnection(db);
+		}
 
-		return JSON.serialize(data);
+		String json = JSON.serialize(data);
+
+		System.out.println("end get customer " + id);
+		return json;
 	}
 
 	@POST
 	@Consumes({ MediaType.APPLICATION_JSON })
 	public Response saveCustomer(String customer, @Context UriInfo uriInfo) throws UnknownHostException {
-		Mongo m = new Mongo();
 		ObjectId id = new ObjectId();
 		DBObject dbObject = (DBObject) JSON.parse(customer);
 		dbObject.put("_id", id);
-		m.getDB("test").getCollection("test").insert(dbObject);
-		m.close();
+
+		DB db = getConnection();
+		try {
+			db.getCollection("customer").insert(dbObject);
+		} finally {
+			releaseConnection(db);
+		}
 
 		URI uri = UriBuilder.fromUri(uriInfo.getBaseUri()).path("customer").path("raw").path("id").path(id.toString()).build();
 		return Response.created(uri).build();
 	}
+
 }
