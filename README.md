@@ -4,17 +4,23 @@ This is an example of using dropwizard [http://bit.ly/WcgD9s]
 
 How-to run
 ==========
-`./deploy.sh`
+```
+./deploy.sh
+```
 
 You may have to grant executable rights `chmod a+x deploy.sh`
 
 How-to compile
 ==============
 You can compile using the gradle wrapper or the native gradle
-`gradle clean fatJar`
-or
-`./g clean fatJar`
+```
+gradle clean fatJar
+```
 
+or
+```
+./g clean fatJar
+```
 
 Opening in Eclipse
 ==================
