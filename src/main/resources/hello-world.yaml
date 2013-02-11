@@ -3,20 +3,7 @@ defaultName: Stranger
 
 # Logging settings.
 logging:
-
   # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
-  level: DEBUG
-
+  level: INFO
   # Logger-specific levels.
-  loggers:
 
-    # Overrides the level of com.example.dw.Thing and sets it to DEBUG.
-    "com.example.dw.Thing": DEBUG
-    
-    console:
-
-      # If true, write log statements to stdout.
-      enabled: true
-
-      # Do not display log statements below this threshold to stdout.
-      threshold: ALL
