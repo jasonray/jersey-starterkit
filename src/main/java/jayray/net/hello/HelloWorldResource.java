@@ -1,24 +1,32 @@
 package jayray.net.hello;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import org.apache.log4j.Logger;
+import com.google.common.base.Optional;
+import com.yammer.metrics.annotation.Timed;
 
-@Path("hello")
+@Path("/hello-world")
+@Produces(MediaType.APPLICATION_JSON)
 public class HelloWorldResource {
-	private static final Logger logger = Logger.getLogger(HelloWorldResource.class);
+	private final String template;
+	private final String defaultName;
+	private final AtomicLong counter;
 
-	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String sayhello() {
-		logger.debug("sample debug message");
-		logger.info("sample info message");
-		logger.warn("sample warning message");
-		logger.error("sample error message");
-		return "hello";
+	public HelloWorldResource(String template, String defaultName) {
+		this.template = template;
+		this.defaultName = defaultName;
+		this.counter = new AtomicLong();
 	}
 
+	@GET
+	@Timed
+	public Saying sayHello(@QueryParam("name") Optional<String> name) {
+		return new Saying(counter.incrementAndGet(), String.format(template, name.or(defaultName)));
+	}
 }

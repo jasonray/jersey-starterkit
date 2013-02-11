@@ -1,8 +1,19 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'fatjar'
 
 repositories {
     mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'eu.appsatori:gradle-fatjar-plugin:0.2-rc1'
+    }
 }
 
 dependencies {
@@ -13,4 +24,13 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.4'
+}
+
+fatJar {
+	manifest {
+		attributes("Main-Class": "jayray.net.HelloWorldService")
+	}
+	exclude 'META-INF/*.SF'
+	exclude 'META-INF/*.DSA'
+	exclude 'META-INF/*.RSA'
 }
