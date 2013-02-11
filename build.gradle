@@ -28,7 +28,11 @@ task wrapper(type: Wrapper) {
 
 fatJar {
 	manifest {
-		attributes("Main-Class": "jayray.net.HelloWorldService")
+		attributes(
+			"Main-Class": "jayray.net.HelloWorldService", 
+			"Implementation-Title": "HelloWorldService", 
+			"Implementation-Version": "0.01"
+		)
 	}
 	exclude 'META-INF/*.SF'
 	exclude 'META-INF/*.DSA'
