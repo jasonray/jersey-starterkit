@@ -4,7 +4,23 @@ This is an example of using dropwizard [http://bit.ly/WcgD9s]
 
 How-to run
 ==========
+```
+./deploy.sh
+```
 
+You may have to grant executable rights `chmod a+x deploy.sh`
+
+How-to compile
+==============
+You can compile using the gradle wrapper or the native gradle
+```
+gradle clean fatJar
+```
+
+or
+```
+./g clean fatJar
+```
 
 Opening in Eclipse
 ==================
@@ -15,11 +31,6 @@ First time only
 If you have gradle installed, run:
 ```
 gradle eclipse
-```
-
-If you do not have gradle installed, run the gradle wrapper:
-```
-./g eclipse
 ```
 
 Now you can import the project into eclipse.
