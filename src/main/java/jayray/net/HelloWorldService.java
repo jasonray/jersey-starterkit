@@ -1,5 +1,7 @@
 package jayray.net;
 
+import jayray.net.hello.CustomerResource;
+import jayray.net.hello.EchoResource;
 import jayray.net.hello.HelloWorldResource;
 
 import com.yammer.dropwizard.Service;
@@ -20,7 +22,11 @@ public class HelloWorldService extends Service<HelloWorldConfiguration> {
 	public void run(HelloWorldConfiguration configuration, Environment environment) {
 		final String template = configuration.getTemplate();
 		final String defaultName = configuration.getDefaultName();
+
 		environment.addResource(new HelloWorldResource(template, defaultName));
+		environment.addResource(new EchoResource());
+		environment.addResource(new CustomerResource());
+
 		environment.addHealthCheck(new TemplateHealthCheck(template));
 	}
 

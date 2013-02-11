@@ -1,7 +1,13 @@
 package jayray.net.hello;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Saying {
+	@XmlAttribute
 	private final long id;
+	@XmlAttribute
 	private final String content;
 
 	public Saying(long id, String content) {
