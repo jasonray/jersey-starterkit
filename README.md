@@ -2,7 +2,6 @@ Overview
 ========
 This is a starter project using jax-rs / jersey.  I've created this because I often find myself wanting to expirement with something that needs a webservice, and this gives me a starting spot.  Clone or fork and use as needed.
 
-
 How-to run
 ==========
 1) Compile
