@@ -1,1 +1,1 @@
-java -jar build/libs/dropwizard-demo.jar server src/main/resources/hello-world.yaml
+java -jar build/libs/jersey-starterkit.jar server src/main/resources/hello-world.yaml
