@@ -2,14 +2,6 @@ Overview
 ========
 This is an example of using dropwizard [http://bit.ly/WcgD9s]
 
-How-to run
-==========
-```
-./deploy.sh
-```
-
-You may have to grant executable rights `chmod a+x deploy.sh`
-
 How-to compile
 ==============
 You can compile using the gradle wrapper or the native gradle
@@ -22,6 +14,15 @@ or
 ./g clean fatJar
 ```
 
+How-to run
+==========
+```
+./deploy.sh
+```
+
+You may have to grant executable rights `chmod a+x deploy.sh`
+
+
 Opening in Eclipse
 ==================
 If you use Eclipse, the gradle scripts are nice enough to create your eclipse project and classpath files.
@@ -32,9 +33,7 @@ If you have gradle installed, run:
 ```
 gradle eclipse
 ```
-
 Now you can import the project into eclipse.
-
 
 Updating classpath files
 ------------------------
