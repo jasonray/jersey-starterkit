@@ -42,3 +42,18 @@ If you update dependencies, pull the new libs into your classpath:
 gradle eclipseClasspath
 ```
 
+Configuration
+=============
+
+Change port
+-----------
+### Command Line
+main port: `-Ddw.http.port=9090`
+admin port: `-Ddw.http.adminPort=9091`
+
+### Config File
+```
+http:
+	port: 9090
+	adminPort:9091
+

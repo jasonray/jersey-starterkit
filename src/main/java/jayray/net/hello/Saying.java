@@ -6,13 +6,17 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Saying {
 	@XmlAttribute
-	private final long id;
+	private long id;
 	@XmlAttribute
-	private final String content;
+	private String content;
 
 	public Saying(long id, String content) {
 		this.id = id;
 		this.content = content;
+	}
+
+	public Saying() {
+		this.content = null;
 	}
 
 	public long getId() {
