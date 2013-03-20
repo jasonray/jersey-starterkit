@@ -56,4 +56,3 @@ admin port: `-Ddw.http.adminPort=9091`
 http:
 	port: 9090
 	adminPort:9091
-
