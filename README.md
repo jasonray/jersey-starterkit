@@ -64,9 +64,3 @@ If you would like to use the default logging, create the logging folders:
 > sudo mkdir /restapi
 > chmod a+wr /restapi
 ````
-
-
-
-
-
-temp5
