@@ -32,9 +32,15 @@ curl localhost:8080/jersey-starterkit/rest/hello
 ```
 
 The supported endpoints are:
-`http://localhost:8080/jersey-starterkit/rest/customer/id/1`
-`http://localhost:8080/jersey-starterkit/rest/echo?m=hello`
-`http://localhost:8080/jersey-starterkit/rest/hello`
+```
+http://localhost:8080/jersey-starterkit/rest/customer/id/1
+```
+```
+http://localhost:8080/jersey-starterkit/rest/echo?m=hello
+```
+```
+http://localhost:8080/jersey-starterkit/rest/hello
+```
 
 
 Opening in Eclipse
