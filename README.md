@@ -6,6 +6,19 @@ Note: if you like this version, I highly recommend checking out the sample dropw
 
 How-to run
 ==========
+0.1) Pre-req
+
+You will need the following installed:
+Java
+Gradle (optional)
+A java web container, such as Tomcat.
+
+If you are on a mac, I recommend to do the following:
+install homebew (see: http://brew.sh/)
+from commnd line, install java and Tomcat:
+`brew install java'
+'brew install apache`
+
 1) Compile
 The project compiles using gradle.  If you already have gradle installed, compile using:
 ```
