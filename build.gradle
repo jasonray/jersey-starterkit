@@ -10,11 +10,11 @@ dependencies {
 	compile "javax.ws.rs:jsr311-api:1.1.1"
 
 
-	compile 'com.sun.jersey:jersey-server:1.16'
-	compile 'com.sun.jersey:jersey-core:1.16'
-	compile 'com.sun.jersey:jersey-client:1.16'
-	compile 'com.sun.jersey:jersey-servlet:1.16'
-	compile 'com.sun.jersey:jersey-json:1.16'
+	compile 'com.sun.jersey:jersey-server:1.19.3'
+	compile 'com.sun.jersey:jersey-core:1.19.3'
+	compile 'com.sun.jersey:jersey-client:1.19.3'
+	compile 'com.sun.jersey:jersey-servlet:1.19.3'
+	compile 'com.sun.jersey:jersey-json:1.19.3'
 	
 	compile 'com.yammer.metrics:metrics-core:2.2.0'
 	compile 'com.yammer.metrics:metrics-servlet:2.2.0'
