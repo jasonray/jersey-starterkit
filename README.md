@@ -19,6 +19,17 @@ from commnd line, install java and Tomcat:
 `brew install java'
 'brew install apache`
 
+If you will be using Tomcat, you will likely want to make sure you have CATALINA_HOME set.  
+On a mac, edit your profile
+```
+vi ~/.bash_profile
+```
+
+and then add the following (replacing with the directory where you Tomcat instance is deployed:
+```
+export CATALINA_HOME=/usr/local/Cellar/tomcat/8.5.9/libexec
+```
+
 1) Compile
 The project compiles using gradle.  If you already have gradle installed, compile using:
 ```
