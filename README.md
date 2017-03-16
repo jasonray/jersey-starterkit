@@ -16,8 +16,10 @@ A java web container, such as Tomcat.
 If you are on a mac, I recommend to do the following:
 install Homebrew (see: http://brew.sh/)
 from command line, install java and Tomcat:
-`brew install java'
-'brew install apache`
+```
+brew install java
+brew install apache
+```
 
 If you will be using Tomcat, you will likely want to make sure you have CATALINA_HOME set.  
 On a mac, edit your profile
