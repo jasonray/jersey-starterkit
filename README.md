@@ -48,7 +48,7 @@ The war file is compiled to: `build/libs/jersey-starterkit.war`
 
 2) Deploy the war file to web container.  I've been using apache-tomcat [http://tomcat.apache.org], and typically copy the war to the tomcat webapps directory.  On my machine:
 ```
-cp build/libs/jersey-starterkit.war /Applications/apache-tomcat-6.0.33/webapps/
+cp build/libs/jersey-starterkit.war /usr/local/Cellar/tomcat/x.x.x/libexec/webapps/
 ```
 
 Shortcut: if you are using tomcat, and $CATALINA_HOME is set, you can run: `./deploy.sh`
