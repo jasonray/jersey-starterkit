@@ -14,8 +14,8 @@ Gradle (optional)
 A java web container, such as Tomcat.
 
 If you are on a mac, I recommend to do the following:
-install Homebrew (see: http://brew.sh/)
-install Java and Tomcat:
+- install Homebrew (see: http://brew.sh/)
+- install Java and Tomcat:
 ```
 brew cask install java
 brew install tomcat
