@@ -18,7 +18,7 @@ install Homebrew (see: http://brew.sh/)
 install Java and Tomcat:
 ```
 brew install java
-brew install apache
+brew install tomcat
 ```
 
 If you will be using Tomcat, you will likely want to make sure you have CATALINA_HOME set.  
