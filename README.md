@@ -17,7 +17,7 @@ If you are on a mac, I recommend to do the following:
 install Homebrew (see: http://brew.sh/)
 install Java and Tomcat:
 ```
-brew install java
+brew cask install java
 brew install tomcat
 ```
 
