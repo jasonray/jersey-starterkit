@@ -15,7 +15,7 @@ A java web container, such as Tomcat.
 
 If you are on a mac, I recommend to do the following:
 install Homebrew (see: http://brew.sh/)
-from command line, and then to install Java and Tomcat:
+install Java and Tomcat:
 ```
 brew install java
 brew install apache
@@ -29,7 +29,7 @@ vi ~/.bash_profile
 
 and then add the following (replacing with the directory where you Tomcat instance is deployed:
 ```
-export CATALINA_HOME=/usr/local/Cellar/tomcat/8.5.9/libexec
+export CATALINA_HOME=/usr/local/Cellar/tomcat/x.x.x/libexec
 ```
 
 1) Compile
