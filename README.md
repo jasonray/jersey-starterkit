@@ -46,6 +46,7 @@ If you do not have gradle installed, you can utilize the gradle wrapper included
 The war file is compiled to: `build/libs/jersey-starterkit.war`
 
 
+
 2) Deploy the war file to web container.  I've been using apache-tomcat [http://tomcat.apache.org], and typically copy the war to the tomcat webapps directory.  On my machine:
 ```
 cp build/libs/jersey-starterkit.war /usr/local/Cellar/tomcat/x.x.x/libexec/webapps/
