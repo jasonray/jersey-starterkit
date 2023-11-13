@@ -2,7 +2,7 @@ Overview
 ========
 This is a starter project using jax-rs / jersey.  I've created this because I often find myself wanting to expirement with something that needs a webservice, and this gives me a starting spot.  Clone or fork and use as needed.
 
-Note: if you like this version, I highly recommend checking out the sample dropwizard implemenation [https://github.com/jasonray/jersey-starterkit/tree/dropwizard], much better for quick implemenations of java based web services.  I love me some dropwizard.  Until I discovered node/express. 
+Note: if you like this version, I highly recommend checking out the sample dropwizard implemenation (https://github.com/jasonray/jersey-starterkit/tree/dropwizard), much better for quick implemenations of java based web services.  I love me some dropwizard.  Until I discovered node/express. 
 
 How-to run
 ==========
